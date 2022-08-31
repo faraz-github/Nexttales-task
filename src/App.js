@@ -1,8 +1,16 @@
+import { ThemeProvider } from "@mui/material";
+
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+
+import { theme } from "./MUI/theme";
+
 function App() {
   return (
-    <div>
-      Hello World!
-    </div>
+    <ThemeProvider theme={theme}>
+      <Navbar />
+      <Sidebar />
+    </ThemeProvider>
   );
 }
 
