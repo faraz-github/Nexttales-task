@@ -8,7 +8,7 @@ function Navbar(props) {
 
     return (
         <>
-            <AppBar position="fixed" sx={{ width: { lg: open ? `calc(100% - ${drawerWidth}px)` : `100%` } }}>
+            <AppBar elevation={0} position="fixed" sx={{ width: { lg: open ? `calc(100% - ${drawerWidth}px)` : `100%` } }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"

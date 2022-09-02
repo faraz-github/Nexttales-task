@@ -3,6 +3,9 @@ import { Box, Drawer, IconButton, Typography } from "@mui/material";
 
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 
+import MenuItems from "./MenuItems";
+import Footer from "./Footer";
+
 function Sidebar(props) {
 
     const { open, setOpen, drawerWidth } = props;
@@ -31,6 +34,8 @@ function Sidebar(props) {
                     <MenuOpenIcon />
                 </IconButton>
             </SidebarHeader>
+            <MenuItems />
+            <Footer />
         </Drawer>
     )
 }

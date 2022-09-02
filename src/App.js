@@ -5,6 +5,7 @@ import { theme } from "./MUI/theme";
 
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import DataDisplay from "./components/DataDisplay";
 
 const drawerWidth = 240;
 
@@ -21,7 +22,7 @@ function App() {
           width: { lg: open ? `calc(100% - ${drawerWidth}px)` : "100%" },
           marginLeft: { lg: open && "240px" }
         }}>
-          <Typography variant="h1">Content Goes Here...</Typography>
+          <DataDisplay />
         </Box>
       </Box>
     </ThemeProvider>
