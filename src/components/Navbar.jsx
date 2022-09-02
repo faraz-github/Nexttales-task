@@ -1,18 +1,31 @@
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Chip from '@mui/material/Chip';
+import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 
-const drawerWidth = 250;
+import MenuIcon from '@mui/icons-material/Menu';
 
-function Navbar() {
+function Navbar(props) {
+
+    const { open, setOpen, drawerWidth } = props;
+
     return (
-        <AppBar sx={{ width: { sm: `calc(100% - ${drawerWidth}px)` } }}>
-            <Toolbar>
-                <Typography variant="h6" sx={{ flexGrow: 1 }}>Discover</Typography>
-                <Chip label="Plus" />
-            </Toolbar>
-        </AppBar>
+        <>
+            <AppBar position="fixed" sx={{ width: { lg: open ? `calc(100% - ${drawerWidth}px)` : `100%` } }}>
+                <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        onClick={() => setOpen(true)}
+                        edge="start"
+                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" noWrap component="div">
+                        Discover
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+            <Toolbar />
+        </>
     )
 }
 

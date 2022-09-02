@@ -1,15 +1,36 @@
-import Drawer from "@mui/material/Drawer";
-import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
+import { Box, Drawer, IconButton, Typography } from "@mui/material";
 
-function Sidebar() {
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+
+function Sidebar(props) {
+
+    const { open, setOpen, drawerWidth } = props;
+
+    const SidebarHeader = styled('div')(({ theme }) => theme.mixins.toolbar);
+
     return (
         <Drawer
+            sx={{
+                width: drawerWidth,
+                flexShrink: 0,
+                '& .MuiDrawer-paper': {
+                    width: drawerWidth,
+                    boxSizing: 'border-box',
+                },
+            }}
+            variant="persistent"
             anchor="left"
-            open={true}
+            open={open}
         >
-            <Box sx={{ width: 250 }}>
-                Sidebar
-            </Box>
+            <SidebarHeader sx={{ display: "flex", alignItems: "center", px: 2 }}>
+                <Box sx={{ flexGrow: 1 }}>
+                    <Typography variant="h6">SmartUp</Typography>
+                </Box>
+                <IconButton onClick={() => setOpen(false)}>
+                    <MenuOpenIcon />
+                </IconButton>
+            </SidebarHeader>
         </Drawer>
     )
 }
