@@ -1,6 +1,6 @@
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from "@mui/material";
-import InfoIcon from '@mui/icons-material/Info';
 
+import PriorityHighOutlinedIcon from '@mui/icons-material/PriorityHighOutlined';
 
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -14,9 +14,9 @@ function Footer() {
                 <ListItem disablePadding>
                     <ListItemButton>
                         <ListItemIcon>
-                            <InfoIcon />
+                            <PriorityHighOutlinedIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Personal" />
+                        <ListItemText primary="About SmartUp" />
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>

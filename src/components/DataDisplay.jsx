@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import { Box, Grid, Card, CardContent, CardMedia, Typography, Tooltip } from "@mui/material";
+import { Box, Grid, Card, CardContent, CardMedia, Typography, Tooltip, CardActionArea } from "@mui/material";
 
 
 function DataDisplay() {
@@ -19,27 +19,29 @@ function DataDisplay() {
         }
         getData();
     }, []);
-    
+
     return (
-        <Box sx={{ backgroundColor: "gray", px: 3, pt: 1 }}>
+        <Box sx={{ backgroundColor: "#f5f5f6", px: 3, pt: 1 }}>
             <Grid container spacing={3}>
                 {
                     displayData?.map((item) => {
-                        return <Grid key={item.postId} item sm={12} md={6} lg={4}>
+                        return <Grid key={item.postId} item sm={12} md={6} lg={4} xl={3}>
                             <Card>
-                                <CardMedia
-                                    component={"img"}
-                                    height="256"
-                                    image={item.coverImageUrl}
-                                    alt="news"
-                                />
-                                <CardContent>
-                                    <Tooltip title={item.title} placement={"top"}>
-                                        <Typography gutterBottom variant="subtitle2">
-                                            {item.title.slice(0, 75)}...
-                                        </Typography>
-                                    </Tooltip>
-                                </CardContent>
+                                <CardActionArea>
+                                    <CardMedia
+                                        component={"img"}
+                                        height="192"
+                                        image={item.coverImageUrl}
+                                        alt="news"
+                                    />
+                                    <CardContent sx={{ py: 1 }}>
+                                        <Tooltip title={item.title} placement={"top"}>
+                                            <Typography gutterBottom variant="subtitle2">
+                                                {item.title.slice(0, 75)}...
+                                            </Typography>
+                                        </Tooltip>
+                                    </CardContent>
+                                </CardActionArea>
                             </Card>
                         </Grid>
                     })

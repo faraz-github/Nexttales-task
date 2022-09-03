@@ -1,8 +1,9 @@
-import { Avatar, Chip, List, ListItem, ListItemButton, ListItemIcon, ListItemText, } from "@mui/material";
+import { Avatar, Chip, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, } from "@mui/material";
 
-import WidgetsIcon from '@mui/icons-material/Widgets';
+import WidgetsOutlinedIcon from '@mui/icons-material/WidgetsOutlined';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 
 function MenuItems() {
     return (
@@ -10,18 +11,20 @@ function MenuItems() {
             <ListItem disablePadding>
                 <ListItemButton>
                     <Avatar sx={{ mr: 1, width: 24, height: 24, }} alt="Remy Sharp" src="https://i.pinimg.com/736x/97/31/02/9731022f0be7c965e880505461643850.jpg" />
-                    <ListItemText primary="Profile" />
+                    <ListItemText primary={<Typography sx={{ fontWeight: 500 }}>Profile</Typography>} />
                     12
-                    <Avatar sx={{ bgcolor: "orange", width: 24, height: 24, ml: 1 }}>i</Avatar>
+                    <IconButton sx={{ bgcolor: "#f56323", ml: 1 }} size="small">
+                        <NotificationsNoneIcon fontSize="small" />
+                    </IconButton>
                 </ListItemButton>
             </ListItem>
-            <ListItem disablePadding sx={{ borderLeft: "7px solid gray", backgroundColor: "#eeeeee" }}>
+            <ListItem disablePadding sx={{ mt: 3, borderLeft: "7px solid #383f47", backgroundColor: "rgba(21,126,252, 0.1)" }}>
                 <ListItemButton>
                     <ListItemIcon>
-                        <WidgetsIcon />
+                        <WidgetsOutlinedIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Discover" />
-                    <Chip size="small" color="primary" sx={{ px: 1 }} label={"24"} />
+                    <ListItemText primary={<Typography sx={{ fontWeight: 500 }}>Discover</Typography>} />
+                    <Chip size="small" color="secondary" sx={{ px: 1 }} label={"24"} />
                 </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
@@ -29,7 +32,7 @@ function MenuItems() {
                     <ListItemIcon>
                         <CircleOutlinedIcon />
                     </ListItemIcon>
-                    <ListItemText primary="SmartUp" />
+                    <ListItemText primary={<Typography sx={{ fontWeight: 500 }}>SmartUp</Typography>} />
                 </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
@@ -61,7 +64,7 @@ function MenuItems() {
                     <ListItemIcon>
                         <PersonOutlineIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Personal" />
+                    <ListItemText primary={<Typography sx={{ fontWeight: 500 }}>Personal</Typography>}  />
                 </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
